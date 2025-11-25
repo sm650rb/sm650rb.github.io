@@ -147,6 +147,23 @@ jQuery(document).ready(function ($) {
     modal.find('#ticket-type').val(ticketType);
   })
 
+  // Scroll spy for menu highlighting
+  $(window).scroll(function() {
+    var scrollDistance = $(window).scrollTop();
+    var headerHeight = $('#header').outerHeight();
+    
+    // Check each section
+    $('section').each(function(i) {
+      if ($(this).position().top - headerHeight - 100 <= scrollDistance) {
+        $('.nav-menu .menu-active').removeClass('menu-active');
+        $('.nav-menu li').eq(i).addClass('menu-active');
+      }
+    });
+  });
+
+  // Update menu highlight on page load
+  $(window).trigger('scroll');
+
   // custom code
 
 });
