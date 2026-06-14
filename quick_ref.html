@@ -1,127 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>SM650 - Road Burners Community Bengaluru - Manual</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
+<head>
+  <meta charset="utf-8" />
+  <title>Quick Reference | Road Burners SM650 Bengaluru</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SM650 owner's quick reference — tyre pressure, oil change intervals, gear shifts, suspension settings and more." />
 
-    <!-- Favicons -->
-    <link href="img/favicon.png" rel="icon" />
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <link href="img/favicon.png" rel="icon" />
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="css/shared.css" rel="stylesheet" />
 
-    <!-- Bootstrap CSS File -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background: var(--bg-light); }
 
-    <!-- Libraries CSS Files -->
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/venobox/venobox.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    #ref-section { padding: 60px 0 80px; }
 
-    <!-- Main Stylesheet File -->
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/expand.css" rel="stylesheet" />
-  </head>
+    /* Manual CTA */
+    .manual-cta {
+      background: var(--dark);
+      border-radius: 14px;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .manual-cta p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.92rem;
+      margin: 0;
+    }
+    .manual-cta h6 {
+      color: #fff;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
 
-  <body>
-    <!--==========================
-    Header
-  ============================-->
-    <header id="header">
-      <div class="container">
-        <div id="logo" class="pull-left">
-          <a href="http://www.sm650.com/#intro" class="scrollto"
-            ><img src="img/logo.png" alt="" title=""
-          /></a>
-        </div>
-        <!-- #nav-menu-container -->
+    /* Reference cards */
+    .ref-card {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.06);
+      overflow: hidden;
+      transition: box-shadow 0.25s;
+    }
+    .ref-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.09); }
+
+    .ref-card-header {
+      padding: 1rem 1.25rem 0.75rem;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .ref-card-header .ref-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #fff8e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .ref-card-header h5 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--dark);
+      margin: 0;
+    }
+    .ref-card img {
+      width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Road Burners SM650" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="announcements.html">Announcements</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#rides-calendar">Calendar</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link active" href="quick_ref.html">Reference</a></li>
+          <li class="nav-item"><a class="nav-link nav-discipline" href="discipline.html">Discipline</a></li>
+          <li class="nav-item ms-lg-2"><a class="nav-link nav-join" href="index.html#join-us">Join Us</a></li>
+        </ul>
       </div>
-    </header>
-    <!-- #header -->
+    </div>
+  </nav>
 
-    <!--==========================
-      Discipline Section
-    ============================-->
-    <section style="margin-top: 130px; height: 100%" class="wow fadeInUp">
-      <div class="container" style="height: 100%">
-        <a href="manual.html" target="_blank"
-          ><b style="color: goldenrod; text-decoration: underline"
-            >Open User Manual</b
-          ></a
-        ><br /><br /><br />
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <span class="sec-label">Know your machine</span>
+      <h1>Quick Reference</h1>
+      <p>Key specs and settings from the SM650 owner's manual — at a glance.</p>
+    </div>
+  </div>
+
+  <!-- REFERENCE CARDS -->
+  <section id="ref-section">
+    <div class="container">
+
+      <!-- Full manual CTA -->
+      <div class="manual-cta">
         <div>
-          <h4 class="quick_ref">Tyre Pressure</h4>
-          <img class="img-fluid" src="img/manual_ref/tyre_pressure.png" />
+          <h6>Owner's Manual</h6>
+          <p>Need more detail? Open the full PDF manual.</p>
         </div>
-        <div>
-          <br />
-          <h4 class="quick_ref">Running In</h4>
-          <img class="img-fluid" src="img/manual_ref/running_in.png" />
+        <a href="manual.html" class="btn-gold" style="white-space:nowrap">
+          <i class="bi bi-file-earmark-pdf me-2"></i>Open Manual
+        </a>
+      </div>
+
+      <!-- Cards grid -->
+      <div class="row g-4">
+
+        <div class="col-lg-6">
+          <div class="ref-card">
+            <div class="ref-card-header">
+              <div class="ref-icon"><i class="bi bi-circle"></i></div>
+              <h5>Tyre Pressure</h5>
+            </div>
+            <img src="img/manual_ref/tyre_pressure.png" alt="Tyre pressure chart" loading="lazy" />
+          </div>
         </div>
-        <div>
-          <br />
-          <h4 class="quick_ref">Changing Oil</h4>
-          <img class="img-fluid" src="img/manual_ref/oil_change.png" />
+
+        <div class="col-lg-6">
+          <div class="ref-card">
+            <div class="ref-card-header">
+              <div class="ref-icon"><i class="bi bi-speedometer"></i></div>
+              <h5>Running In</h5>
+            </div>
+            <img src="img/manual_ref/running_in.png" alt="Running in procedure" loading="lazy" />
+          </div>
         </div>
-        <div>
-          <br />
-          <h4 class="quick_ref">Lubricants</h4>
-          <img class="img-fluid" src="img/manual_ref/lubricants.png" />
+
+        <div class="col-lg-6">
+          <div class="ref-card">
+            <div class="ref-card-header">
+              <div class="ref-icon"><i class="bi bi-droplet"></i></div>
+              <h5>Changing Oil</h5>
+            </div>
+            <img src="img/manual_ref/oil_change.png" alt="Oil change intervals" loading="lazy" />
+          </div>
         </div>
-        <div>
-          <br />
-          <h4 class="quick_ref">Gear Shifts</h4>
-          <img class="img-fluid" src="img/manual_ref/gear_shift.png" />
+
+        <div class="col-lg-6">
+          <div class="ref-card">
+            <div class="ref-card-header">
+              <div class="ref-icon"><i class="bi bi-moisture"></i></div>
+              <h5>Lubricants</h5>
+            </div>
+            <img src="img/manual_ref/lubricants.png" alt="Lubricant specifications" loading="lazy" />
+          </div>
         </div>
-        <div>
-          <br />
-          <h4 class="quick_ref">Suspension Setting</h4>
-          <img class="img-fluid" src="img/manual_ref/suspension_setting.png" />
+
+        <div class="col-lg-6">
+          <div class="ref-card">
+            <div class="ref-card-header">
+              <div class="ref-icon"><i class="bi bi-gear"></i></div>
+              <h5>Gear Shifts</h5>
+            </div>
+            <img src="img/manual_ref/gear_shift.png" alt="Gear shift diagram" loading="lazy" />
+          </div>
         </div>
-        <div>
-          <br />
-          <h4 class="quick_ref">Luggage Categories (if fitted)</h4>
-          <img class="img-fluid" src="img/manual_ref/luggage_categories.png" />
+
+        <div class="col-lg-6">
+          <div class="ref-card">
+            <div class="ref-card-header">
+              <div class="ref-icon"><i class="bi bi-sliders"></i></div>
+              <h5>Suspension Setting</h5>
+            </div>
+            <img src="img/manual_ref/suspension_setting.png" alt="Suspension settings" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="ref-card">
+            <div class="ref-card-header">
+              <div class="ref-icon"><i class="bi bi-bag"></i></div>
+              <h5>Luggage Categories</h5>
+            </div>
+            <img src="img/manual_ref/luggage_categories.png" alt="Luggage categories" loading="lazy" />
+          </div>
+        </div>
+
+      </div><!-- /row -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5 col-md-12">
+          <img class="footer-logo" src="img/logo.png" alt="Road Burners" />
+          <p>A community of Super Meteor 650 riders from Bengaluru.</p>
+        </div>
+        <div class="col-lg-3 col-6">
+          <p class="footer-col-title">Pages</p>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#rides-calendar">Calendar</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="quick_ref.html">Reference</a></li>
+            <li><a href="discipline.html">Discipline</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-6">
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links">
+            <li><a href="https://www.facebook.com/groups/1364116901154720" target="_blank">Facebook</a></li>
+            <li><a href="https://chat.whatsapp.com/HVpiucMISc7EldoXT0Cm11" target="_blank">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/super_meteor_650_road_burners_/" target="_blank">Instagram</a></li>
+            <li><a href="mailto:contact@sm650.com">contact@sm650.com</a></li>
+          </ul>
         </div>
       </div>
-    </section>
-
-    <!--==========================
-    Footer
-  ============================-->
-    <footer id="footer" style="z-index: 3">
-      <div class="container">
-        <div class="copyright" style="font-size: 0.9em">
-          &copy; Copyright <strong style="color: #ffdf72">#SM650RB</strong>. All
-          Rights Reserved,
-          <a href="mailto:contact@sm650.com">contact@sm650.com</a>
-        </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 <strong style="color:var(--gold)">#SM650RB</strong> Road Burners. All rights reserved.</span>
+        <a href="mailto:contact@sm650.com">contact@sm650.com</a>
       </div>
-    </footer>
-    <!-- #footer -->
+    </div>
+  </footer>
 
-    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+  <a href="#" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- JavaScript Libraries -->
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/superfish/hoverIntent.js"></script>
-    <script src="lib/superfish/superfish.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/venobox/venobox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <script src="js/expand.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/shared.js"></script>
+</body>
 </html>

@@ -1,295 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>SM650 - Road Burners Community Bengaluru - Discipline</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
+<head>
+  <meta charset="utf-8" />
+  <title>Discipline | Road Burners SM650 Bengaluru</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Riding etiquette, safety standards and conduct code for Road Burners SM650 community." />
 
-    <!-- Favicons -->
-    <link href="img/favicon.png" rel="icon" />
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <link href="img/favicon.png" rel="icon" />
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="css/shared.css" rel="stylesheet" />
 
-    <!-- Bootstrap CSS File -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background: var(--bg-light); }
 
-    <!-- Libraries CSS Files -->
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/venobox/venobox.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    #discipline-section { padding: 60px 0 80px; }
 
-    <!-- Main Stylesheet File -->
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/expand.css" rel="stylesheet" />
-    <link href="css/slides.css" rel="stylesheet" />
-  </head>
+    /* Intro callout */
+    .discipline-intro {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.06);
+      padding: 2rem 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .discipline-intro p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin: 0; }
+    .discipline-intro ul {
+      color: var(--muted);
+      margin: 1rem 0 0;
+      padding-left: 1.25rem;
+      line-height: 1.9;
+    }
+    .discipline-intro strong { color: var(--dark); }
 
-  <body>
-    <!--==========================
-    Header
-  ============================-->
-    <header id="header">
-      <div class="container">
-        <div id="logo" class="pull-left">
-          <a href="http://www.sm650.com/#intro" class="scrollto"
-            ><img src="img/logo.png" alt="" title=""
-          /></a>
-        </div>
-        <!-- #nav-menu-container -->
+    /* Tab pills */
+    .nav-pills .nav-link {
+      color: var(--muted);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 50px;
+      padding: 0.6rem 1.4rem;
+      transition: all 0.2s;
+    }
+    .nav-pills .nav-link:hover { color: var(--dark); background: rgba(0,0,0,0.05); }
+    .nav-pills .nav-link.active {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    /* Accordion */
+    .accordion-item {
+      border: none;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      background: transparent;
+    }
+    .accordion-item:first-of-type { border-top: 1px solid rgba(0,0,0,0.07); }
+    .accordion-button {
+      background: transparent;
+      color: var(--dark);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 1rem 0;
+      box-shadow: none !important;
+    }
+    .accordion-button:not(.collapsed) {
+      background: transparent;
+      color: var(--gold);
+    }
+    .accordion-button::after {
+      filter: none;
+    }
+    .accordion-button:not(.collapsed)::after {
+      filter: invert(70%) sepia(80%) saturate(500%) hue-rotate(0deg);
+    }
+    .accordion-body {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      padding: 0 0 1.25rem;
+    }
+    .accordion-body ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+    .accordion-body li { margin-bottom: 0.4rem; }
+
+    .tab-pane > p:first-child {
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+    .tab-pane > .section-subtitle {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Consequences card */
+    .consequences-card {
+      background: var(--dark);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-top: 2rem;
+    }
+    .consequences-card h6 {
+      color: var(--gold);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .consequences-card p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Road Burners SM650" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="announcements.html">Announcements</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#rides-calendar">Calendar</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="quick_ref.html">Reference</a></li>
+          <li class="nav-item"><a class="nav-link nav-discipline active" href="discipline.html">Discipline</a></li>
+          <li class="nav-item ms-lg-2"><a class="nav-link nav-join" href="index.html#join-us">Join Us</a></li>
+        </ul>
       </div>
-    </header>
-    <!-- #header -->
-    
-    <!--==========================
-      Discipline Section
-    ============================-->
-    <section id="discipline" class="section-with-bg wow fadeInUp">
-      <div class="container">
-        <div class="section-header text-center">
-          <br/><br/><br/>
-          <h2>Discipline</h2>
-          <p style="padding-bottom: 20px;">
-            We are a group of like minded people who love to ride and explore
-            new places. We are,
-          </p>
-          <div class="text-center">
-            <ul>
-              <li><b>NOT</b> a racing or a stunt group.</li>
-              <li>Group who ride with proper riding gears, documents,
-                license, insurance and pollution certificate.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="text-center">
-          <p>We follow discipline to maintain a safe and respectful riding environment. Here are some key points to consider as categorised below.</p>
-        </div>
-        <div>
-          <div class="row">
-            <a href="#etiquette" class="column tab-link" onclick="openGrid('etiquette'); return false;">Riding etiquette</a>
-            <a href="#safety" class="column tab-link" onclick="openGrid('safety'); return false;">Riding safety standards</a>
-            <a href="#decency" class="column tab-link" onclick="openGrid('decency'); return false;">Decency &amp; Conduct Code</a>
-          </div>
+    </div>
+  </nav>
 
-          <div id="etiquette" class="tab" style="display: block;">
-            <div class="title">Riding etiquette</div>
-            <p>
-              Riding etiquette promotes a positive and safe riding experience for everyone on the road. Respect, cooperation, and adherence to traffic laws are essential to maintaining a harmonious environment for motorcyclists and other road users.
-            </p>
-            <button type="button" class="collapsible" onclick="openContent(this);">Observe Traffic Laws</button>
-            <div class="content">
-              <p>Follow all traffic laws and regulations, including speed limits, traffic signals, and lane markings. This ensures the safety of you and others on the road.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Be Predictable</button>
-            <div class="content">
-              <p>Maintain a consistent and predictable riding style. Signal your intentions with proper hand signals or using your motorcycle's turn signals.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Maintain a Safe Distance</button>
-            <div class="content">
-              <p>Keep a safe following distance behind other vehicles, allowing enough time to react and maneuver if necessary. Avoid tailgating.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Use Your Mirrors</button>
-            <div class="content">
-              <p> Regularly check your mirrors to be aware of the traffic behind you. Signal and check your blind spots before changing lanes or making turns.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Communicate with Other Riders</button>
-            <div class="content">
-              <p>Use hand signals, nodding, or other recognized gestures to communicate with fellow riders. This helps in group riding situations and enhances overall safety.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Be Respectful</button>
-            <div class="content">
-              <p>Treat other road users, including pedestrians, cyclists, and motorists, with respect and courtesy. Avoid aggressive or confrontational behavior.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Group Riding</button>
-            <div class="content">
-              <p>When riding in a group, follow the predetermined formation and maintain proper spacing. Use hand signals or intercoms to communicate within the group.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Noise Consideration</button>
-            <div class="content">
-              <p>Be mindful of excessive noise from your motorcycle's exhaust system. Respect noise regulations and the peace of the community by keeping your bike's noise levels within acceptable limits.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Lane Sharing</button>
-            <div class="content">
-              <p>If lane sharing or filtering is legal in your jurisdiction, do it cautiously and respectfully. Communicate your intentions, watch for opening car doors, and avoid surprising other drivers.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Parking</button>
-            <div class="content">
-              <p>Park your motorcycle in designated areas or as instructed by local regulations. Avoid blocking sidewalks, entrances, or obstructing other vehicles.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Environmental Responsibility</button>
-            <div class="content">
-              <p>Minimize your impact on the environment by disposing of waste properly, avoiding littering, and practicing eco-friendly riding techniques when applicable.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Assistance and Support</button>
-            <div class="content">
-              <p>Offer help to fellow riders in need if it is safe to do so. Share knowledge, experiences, and resources within the motorcycling community.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Continuous Learning</button>
-            <div class="content">
-              <p>Last but not the least, strive to improve your riding skills through training, practice, and staying updated on current riding techniques and safety practices.</p>
-            </div>
-          </div>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <span class="sec-label">How we ride</span>
+      <h1>Discipline</h1>
+      <p>Etiquette, safety and conduct — what makes Road Burners a club worth riding with.</p>
+    </div>
+  </div>
 
-          <div id="safety" class="tab">
-            <div class="title">Riding safety standards</div>
-            <p>
-              Riding safety standards are a set of guidelines and practices designed to enhance the safety of motorcyclists and reduce the risk of accidents. Here are some important riding safety standards to follow:
-            </p>
-            <button type="button" class="collapsible" onclick="openContent(this);">Wear Protective Gear</button>
-            <div class="content">
-              <p>Always wear a ISI/DOT/ECE - approved helmet, protective eyewear, gloves, a durable jacket, long pants, and sturdy boots. This gear provides essential protection in case of a crash.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Maintain Your Motorcycle</button>
-            <div class="content">
-              <p>Regularly inspect and maintain your motorcycle according to the manufacturer's recommendations. Pay attention to brakes, tires, lights, signals, fluids, and suspension to ensure optimal performance.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Ride Sober</button>
-            <div class="content">
-              <p>Never ride under the influence of alcohol, drugs, or any substance that impairs your judgment, coordination, and reflexes. Even small amounts of alcohol can significantly affect your riding ability.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Observe Speed Limits</button>
-            <div class="content">
-              <p>Adhere to posted speed limits and adjust your speed based on road conditions. Excessive speed reduces your ability to react to hazards and increases the severity of accidents.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Use Defensive Riding Techniques</button>
-            <div class="content">
-              <p>Anticipate potential hazards, maintain a safe following distance, and constantly scan your surroundings. Be prepared to react to unexpected situations.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Signal and Communicate</button>
-            <div class="content">
-              <p>Use your motorcycle's turn signals and hand signals to indicate your intentions to other road users. Make eye contact with drivers to ensure they are aware of your presence.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Be Visible</button>
-            <div class="content">
-              <p>Wear brightly colored or reflective clothing to increase your visibility to other motorists. Use your motorcycle's headlights during the day and night, and consider adding additional lighting or reflective elements to your bike.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Maintain Space and Distance</button>
-            <div class="content">
-              <p>Keep a safe distance from other vehicles, allowing ample space to react and maneuver if needed. Avoid riding in blind spots and be cautious of drivers who may not see you.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Be Mindful of Road Conditions</button>
-            <div class="content">
-              <p>Adjust your riding style to match the road conditions, such as wet or slippery surfaces, gravel, or uneven pavement. Slow down and use caution when encountering challenging road conditions.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Stay Alert and Focused</button>
-            <div class="content">
-              <p>Avoid distractions while riding, such as using electronic devices or listening to loud music. Stay focused on the road, traffic, and potential hazards.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Take Regular Breaks</button>
-            <div class="content">
-              <p>Fatigue can impair your riding abilities. Take regular breaks to rest, hydrate, and stretch during long rides to stay refreshed and alert.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Continuous Skills Improvement</button>
-            <div class="content">
-              <p>Take part in advanced rider training courses to enhance your riding skills, hazard perception, and emergency maneuvering abilities. Lifelong learning can help you become a safer and more confident rider.</p>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Respect Traffic Laws</button>
-            <div class="content">
-              <p>Observe all traffic laws and regulations, including speed limits, traffic signals, and lane markings. Adhering to traffic laws is crucial for your safety and the safety of others.</p>
-            </div>
-          </div>
+  <!-- DISCIPLINE CONTENT -->
+  <section id="discipline-section">
+    <div class="container">
 
-          <div id="decency" class="tab">
-            <div class="title">Decency &amp; Conduct Code (On-Ride &amp; Off-Ride)</div>
-            <p>
-              The Decency &amp; Conduct Code reflects the character of The Road Burners Association. These principles ensure every ride and gathering remains inclusive, considerate, and enjoyable for all members and guests.
-            </p>
-            <button type="button" class="collapsible" onclick="openContent(this);">Respect People</button>
-            <div class="content">
-              <ul>
-                <li>Speak normally - no ego, shouting, sarcasm, or taunts.</li>
-                <li>Do not pull rank or act superior; everyone is equal here.</li>
-              </ul>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">No Entitlement</button>
-            <div class="content">
-              <ul>
-                <li>OBs are coordinators, not service staff.</li>
-                <li>No demands or expectation of special treatment; offer help before you complain.</li>
-              </ul>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">No Show-Off Riding</button>
-            <div class="content">
-              <ul>
-                <li>No cutting formation, unnecessary revving, tailgating, sudden lane changes, or drama.</li>
-                <li>Never risk the group's safety just to prove a point.</li>
-              </ul>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Keep the Atmosphere Clean</button>
-            <div class="content">
-              <ul>
-                <li>Share feedback or disagreements privately.</li>
-                <li>Do not create friction during rides or in group chats.</li>
-                <li>No gossip or backchannel politics.</li>
-              </ul>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Be Reliable</button>
-            <div class="content">
-              <ul>
-                <li>Arrive on time with complete safety gear.</li>
-                <li>Fuel up and check your motorcycle before every ride.</li>
-                <li>Follow Lead/Sweep instructions without arguments.</li>
-              </ul>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Support Fellow RBs</button>
-            <div class="content">
-              <ul>
-                <li>Help riders who are stuck or facing issues.</li>
-                <li>Look out for everyone's safety.</li>
-                <li>Share relevant information when the group needs it.</li>
-              </ul>
-            </div>
-            <button type="button" class="collapsible" onclick="openContent(this);">Represent RB Everywhere</button>
-            <div class="content">
-              <ul>
-                <li>Your conduct should be consistent—on highways, cafés, resorts, public events, WhatsApp, or Instagram.</li>
-                <li>No loud scenes, disrespect to locals, or behavior that harms the club's image.</li>
-              </ul>
-            </div>
-            <div class="content" style="display: block; border-top: 1px solid #eee; margin-top: 20px;">
-              <strong>Consequences</strong>
-              <p>If someone repeatedly behaves in a rude, entitled, unsafe, or disruptive manner, they will be asked to sit out future rides or even be expelled from the club. No drama, no debates - it's about safety, harmony, and maintaining the culture.</p>
-            </div>
-          </div>
+      <!-- Who we are callout -->
+      <div class="discipline-intro">
+        <p>We are a group of like-minded people who love to ride and explore new places. We are:</p>
+        <ul>
+          <li><strong>NOT</strong> a racing or a stunt group.</li>
+          <li>A group who rides with proper riding gear, documents, licence, insurance and pollution certificate.</li>
+        </ul>
+        <p style="margin-top:1rem;">We follow discipline to maintain a safe and respectful riding environment. Browse the categories below.</p>
       </div>
-    </section>
 
-    <!--==========================
-    Footer
-  ============================-->
-    <footer id="footer" style="z-index: 3">
-      <div class="container">
-        <div class="copyright" style="font-size: 0.9em">
-          &copy; Copyright <strong style="color: #ffdf72">#SM650RB</strong>. All
-          Rights Reserved,
-          <a href="mailto:contact@sm650.com">contact@sm650.com</a>
+      <!-- Tab pills -->
+      <ul class="nav nav-pills gap-2 mb-4" id="disciplineTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="etiquette-tab" data-bs-toggle="pill" data-bs-target="#etiquette" type="button" role="tab">
+            <i class="bi bi-compass me-1"></i>Riding Etiquette
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="safety-tab" data-bs-toggle="pill" data-bs-target="#safety" type="button" role="tab">
+            <i class="bi bi-shield-check me-1"></i>Safety Standards
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="decency-tab" data-bs-toggle="pill" data-bs-target="#decency" type="button" role="tab">
+            <i class="bi bi-people me-1"></i>Decency &amp; Conduct
+          </button>
+        </li>
+      </ul>
+
+      <!-- Tab content -->
+      <div class="tab-content" id="disciplineTabContent">
+
+        <!-- Riding Etiquette -->
+        <div class="tab-pane fade show active" id="etiquette" role="tabpanel">
+          <p>Riding etiquette promotes a positive and safe riding experience for everyone on the road. Respect, cooperation and adherence to traffic laws are essential.</p>
+          <div class="accordion accordion-flush" id="accordionEtiquette">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#et1">Observe Traffic Laws</button></h2>
+              <div id="et1" class="accordion-collapse collapse" data-bs-parent="#accordionEtiquette"><div class="accordion-body">Follow all traffic laws and regulations, including speed limits, traffic signals, and lane markings. This ensures the safety of you and others on the road.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#et2">Be Predictable</button></h2>
+              <div id="et2" class="accordion-collapse collapse" data-bs-parent="#accordionEtiquette"><div class="accordion-body">Maintain a consistent and predictable riding style. Signal your intentions with proper hand signals or your motorcycle's turn signals.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#et3">Maintain a Safe Distance</button></h2>
+              <div id="et3" class="accordion-collapse collapse" data-bs-parent="#accordionEtiquette"><div class="accordion-body">Keep a safe following distance behind other vehicles, allowing enough time to react and manoeuvre if necessary. Avoid tailgating.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#et4">Use Your Mirrors</button></h2>
+              <div id="et4" class="accordion-collapse collapse" data-bs-parent="#accordionEtiquette"><div class="accordion-body">Regularly check your mirrors to be aware of the traffic behind you. Signal and check your blind spots before changing lanes or making turns.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#et5">Communicate with Other Riders</button></h2>
+              <div id="et5" class="accordion-collapse collapse" data-bs-parent="#accordionEtiquette"><div class="accordion-body">Use hand signals, nodding, or other recognised gestures to communicate with fellow riders. This helps in group riding situations and enhances overall safety.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#et6">Be Respectful</button></h2>
+              <div id="et6" class="accordion-collapse collapse" data-bs-parent="#accordionEtiquette"><div class="accordion-body">Treat other road users — pedestrians, cyclists, and motorists — with respect and courtesy. Avoid aggressive or confrontational behaviour.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#et7">Group Riding</button></h2>
+              <div id="et7" class="accordion-collapse collapse" data-bs-parent="#accordionEtiquette"><div class="accordion-body">When riding in a group, follow the predetermined formation and maintain proper spacing. Use hand signals or intercoms to communicate within the group.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#et8">Noise Consideration</button></h2>
+              <div id="et8" class="accordion-collapse collapse" data-bs-parent="#accordionEtiquette"><div class="accordion-body">Be mindful of excessive noise from your motorcycle's exhaust. Respect noise regulations and the peace of the community by keeping noise levels within acceptable limits.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#et9">Lane Sharing</button></h2>
+              <div id="et9" class="accordion-collapse collapse" data-bs-parent="#accordionEtiquette"><div class="accordion-body">If lane sharing or filtering is legal in your jurisdiction, do it cautiously and respectfully. Watch for opening car doors and avoid surprising other drivers.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#et10">Environmental Responsibility</button></h2>
+              <div id="et10" class="accordion-collapse collapse" data-bs-parent="#accordionEtiquette"><div class="accordion-body">Minimise your impact on the environment by disposing of waste properly and avoiding littering.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#et11">Assistance and Support</button></h2>
+              <div id="et11" class="accordion-collapse collapse" data-bs-parent="#accordionEtiquette"><div class="accordion-body">Offer help to fellow riders in need if it is safe to do so. Share knowledge, experiences, and resources within the community.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#et12">Continuous Learning</button></h2>
+              <div id="et12" class="accordion-collapse collapse" data-bs-parent="#accordionEtiquette"><div class="accordion-body">Strive to improve your riding skills through training, practice, and staying updated on current riding techniques and safety practices.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Safety Standards -->
+        <div class="tab-pane fade" id="safety" role="tabpanel">
+          <p>Riding safety standards are guidelines designed to enhance the safety of motorcyclists and reduce the risk of accidents.</p>
+          <div class="accordion accordion-flush" id="accordionSafety">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sa1">Wear Protective Gear</button></h2>
+              <div id="sa1" class="accordion-collapse collapse" data-bs-parent="#accordionSafety"><div class="accordion-body">Always wear an ISI/DOT/ECE-approved helmet, protective eyewear, gloves, a durable jacket, long pants, and sturdy boots. This gear provides essential protection in case of a crash.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sa2">Maintain Your Motorcycle</button></h2>
+              <div id="sa2" class="accordion-collapse collapse" data-bs-parent="#accordionSafety"><div class="accordion-body">Regularly inspect and maintain your motorcycle per the manufacturer's recommendations. Pay attention to brakes, tyres, lights, signals, fluids and suspension.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sa3">Ride Sober</button></h2>
+              <div id="sa3" class="accordion-collapse collapse" data-bs-parent="#accordionSafety"><div class="accordion-body">Never ride under the influence of alcohol, drugs, or any substance that impairs your judgment, coordination, or reflexes.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sa4">Observe Speed Limits</button></h2>
+              <div id="sa4" class="accordion-collapse collapse" data-bs-parent="#accordionSafety"><div class="accordion-body">Adhere to posted speed limits and adjust your speed based on road conditions. Excessive speed reduces your ability to react to hazards.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sa5">Use Defensive Riding Techniques</button></h2>
+              <div id="sa5" class="accordion-collapse collapse" data-bs-parent="#accordionSafety"><div class="accordion-body">Anticipate potential hazards, maintain a safe following distance, and constantly scan your surroundings. Be prepared to react to unexpected situations.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sa6">Be Visible</button></h2>
+              <div id="sa6" class="accordion-collapse collapse" data-bs-parent="#accordionSafety"><div class="accordion-body">Wear brightly coloured or reflective clothing. Use your motorcycle's headlights during the day and night, and consider adding additional lighting or reflective elements.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sa7">Be Mindful of Road Conditions</button></h2>
+              <div id="sa7" class="accordion-collapse collapse" data-bs-parent="#accordionSafety"><div class="accordion-body">Adjust your riding style to match the road conditions — wet surfaces, gravel, or uneven pavement. Slow down and use caution in challenging conditions.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sa8">Stay Alert and Focused</button></h2>
+              <div id="sa8" class="accordion-collapse collapse" data-bs-parent="#accordionSafety"><div class="accordion-body">Avoid distractions while riding, such as using electronic devices or listening to loud music. Stay focused on the road, traffic, and potential hazards.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sa9">Take Regular Breaks</button></h2>
+              <div id="sa9" class="accordion-collapse collapse" data-bs-parent="#accordionSafety"><div class="accordion-body">Fatigue impairs your riding abilities. Take regular breaks to rest, hydrate, and stretch during long rides.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sa10">Continuous Skills Improvement</button></h2>
+              <div id="sa10" class="accordion-collapse collapse" data-bs-parent="#accordionSafety"><div class="accordion-body">Take part in advanced rider training courses to enhance your riding skills, hazard perception, and emergency manoeuvring abilities.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decency & Conduct -->
+        <div class="tab-pane fade" id="decency" role="tabpanel">
+          <p>The Decency &amp; Conduct Code reflects the character of The Road Burners Association. These principles ensure every ride and gathering remains inclusive, considerate, and enjoyable for all members and guests.</p>
+          <div class="accordion accordion-flush" id="accordionDecency">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dc1">Respect People</button></h2>
+              <div id="dc1" class="accordion-collapse collapse" data-bs-parent="#accordionDecency"><div class="accordion-body"><ul><li>Speak normally — no ego, shouting, sarcasm, or taunts.</li><li>Do not pull rank or act superior; everyone is equal here.</li></ul></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dc2">No Entitlement</button></h2>
+              <div id="dc2" class="accordion-collapse collapse" data-bs-parent="#accordionDecency"><div class="accordion-body"><ul><li>OBs are coordinators, not service staff.</li><li>No demands or expectation of special treatment; offer help before you complain.</li></ul></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dc3">No Show-Off Riding</button></h2>
+              <div id="dc3" class="accordion-collapse collapse" data-bs-parent="#accordionDecency"><div class="accordion-body"><ul><li>No cutting formation, unnecessary revving, tailgating, sudden lane changes, or drama.</li><li>Never risk the group's safety just to prove a point.</li></ul></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dc4">Keep the Atmosphere Clean</button></h2>
+              <div id="dc4" class="accordion-collapse collapse" data-bs-parent="#accordionDecency"><div class="accordion-body"><ul><li>Share feedback or disagreements privately.</li><li>Do not create friction during rides or in group chats.</li><li>No gossip or backchannel politics.</li></ul></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dc5">Be Reliable</button></h2>
+              <div id="dc5" class="accordion-collapse collapse" data-bs-parent="#accordionDecency"><div class="accordion-body"><ul><li>Arrive on time with complete safety gear.</li><li>Fuel up and check your motorcycle before every ride.</li><li>Follow Lead/Sweep instructions without arguments.</li></ul></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dc6">Support Fellow RBs</button></h2>
+              <div id="dc6" class="accordion-collapse collapse" data-bs-parent="#accordionDecency"><div class="accordion-body"><ul><li>Help riders who are stuck or facing issues.</li><li>Look out for everyone's safety.</li><li>Share relevant information when the group needs it.</li></ul></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dc7">Represent RB Everywhere</button></h2>
+              <div id="dc7" class="accordion-collapse collapse" data-bs-parent="#accordionDecency"><div class="accordion-body"><ul><li>Your conduct should be consistent — on highways, cafés, resorts, public events, WhatsApp, or Instagram.</li><li>No loud scenes, disrespect to locals, or behaviour that harms the club's image.</li></ul></div></div>
+            </div>
+          </div>
+
+          <div class="consequences-card">
+            <h6>Consequences</h6>
+            <p>If someone repeatedly behaves in a rude, entitled, unsafe, or disruptive manner, they will be asked to sit out future rides or even be expelled from the club. No drama, no debates — it's about safety, harmony, and maintaining the culture.</p>
+          </div>
+        </div>
+
+      </div><!-- /tab-content -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5 col-md-12">
+          <img class="footer-logo" src="img/logo.png" alt="Road Burners" />
+          <p>A community of Super Meteor 650 riders from Bengaluru.</p>
+        </div>
+        <div class="col-lg-3 col-6">
+          <p class="footer-col-title">Pages</p>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#rides-calendar">Calendar</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="quick_ref.html">Reference</a></li>
+            <li><a href="discipline.html">Discipline</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-6">
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links">
+            <li><a href="https://www.facebook.com/groups/1364116901154720" target="_blank">Facebook</a></li>
+            <li><a href="https://chat.whatsapp.com/HVpiucMISc7EldoXT0Cm11" target="_blank">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/super_meteor_650_road_burners_/" target="_blank">Instagram</a></li>
+            <li><a href="mailto:contact@sm650.com">contact@sm650.com</a></li>
+          </ul>
         </div>
       </div>
-    </footer>
-    <!-- #footer -->
+      <div class="footer-bottom">
+        <span>&copy; 2025 <strong style="color:var(--gold)">#SM650RB</strong> Road Burners. All rights reserved.</span>
+        <a href="mailto:contact@sm650.com">contact@sm650.com</a>
+      </div>
+    </div>
+  </footer>
 
-    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+  <a href="#" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- JavaScript Libraries -->
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/superfish/hoverIntent.js"></script>
-    <script src="lib/superfish/superfish.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/venobox/venobox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <script src="js/events_grid.js"></script>
-    <script src="js/expand.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/shared.js"></script>
+</body>
 </html>
