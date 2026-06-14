@@ -1,0 +1,12 @@
+# Smriti consciousness cache (managed by consciousness-cursor plugin)
+.kb/
+
+.env
+.env.local
+.env.example
+.DS_Store
+
+# Member portal and deploy tooling (local / Serverbyt only)
+acc/
+scripts/
+.github/

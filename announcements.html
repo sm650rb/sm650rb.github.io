@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Announcements | Road Burners SM650 Bengaluru</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Latest announcements from the Road Burners SM650 community — registration, fees, and club updates." />
+
+  <link href="img/favicon.png" rel="icon" />
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="css/shared.css" rel="stylesheet" />
+
+  <style>
+    body { background: var(--bg-light); }
+
+    #ann-section { padding: 60px 0 80px; }
+
+    /* Announcement card */
+    .ann-card {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.06);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .ann-card-header {
+      padding: 1.4rem 2rem;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .ann-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: #fff8e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .ann-card-header h4 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--dark);
+      margin: 0;
+    }
+    .ann-card-body {
+      padding: 1.75rem 2rem;
+    }
+    .ann-card-body p {
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .ann-card-body p:last-child { margin-bottom: 0; }
+    .ann-card-body strong { color: var(--dark); }
+
+    /* Bullet list */
+    .ann-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+    }
+    .ann-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 0.45rem;
+    }
+    .ann-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 0.55rem;
+      flex-shrink: 0;
+    }
+    .ann-list li strong { color: var(--dark); }
+
+    /* Gear list (special highlight) */
+    .gear-list {
+      background: var(--bg-light);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .gear-list li { margin-bottom: 0.35rem; }
+
+    /* Divider */
+    .ann-divider {
+      border: none;
+      border-top: 1px dashed rgba(0,0,0,0.1);
+      margin: 1.5rem 0;
+    }
+
+    /* CTA strip inside card */
+    .ann-cta {
+      background: var(--bg-light);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      padding: 1.1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .ann-cta span {
+      font-size: 0.88rem;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    /* Fee table */
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.25rem;
+      font-size: 0.93rem;
+    }
+    .fee-table thead th {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0.5rem 1rem;
+      border-bottom: 2px solid rgba(0,0,0,0.08);
+      text-align: left;
+    }
+    .fee-table tbody tr:not(:last-child) td {
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .fee-table tbody td {
+      padding: 0.7rem 1rem;
+      color: var(--text);
+    }
+    .fee-table tbody td:last-child {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .fee-table .section-row td {
+      background: var(--bg-light);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      padding: 0.55rem 1rem 0.4rem;
+    }
+
+    /* UPI highlight */
+    .upi-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #e8f5e9;
+      color: #2e7d32;
+      border-radius: 8px;
+      padding: 0.55rem 1rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* Warning note */
+    .ann-note {
+      background: #fff8e1;
+      border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 0.85rem 1.1rem;
+      font-size: 0.9rem;
+      color: #7a6000;
+      margin-bottom: 1.25rem;
+    }
+    .ann-note i { margin-right: 0.4rem; }
+
+    /* Timeline items */
+    .timeline-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+    }
+    .timeline-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 0.4rem;
+      flex-shrink: 0;
+    }
+    .timeline-item p { margin: 0; font-size: 0.93rem; color: var(--muted); }
+    .timeline-item strong { color: var(--dark); }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Road Burners SM650" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="announcements.html">Announcements</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#rides-calendar">Calendar</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="quick_ref.html">Reference</a></li>
+          <li class="nav-item"><a class="nav-link nav-discipline" href="discipline.html">Discipline</a></li>
+          <li class="nav-item ms-lg-2"><a class="nav-link nav-join" href="index.html#join-us">Join Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <span class="sec-label">Stay in the loop</span>
+      <h1>Announcements</h1>
+      <p>Important updates from the RB Crew — read before your next ride.</p>
+    </div>
+  </div>
+
+  <!-- ANNOUNCEMENTS -->
+  <section id="ann-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+          <!-- ── 1. Club Registration ─────────────── -->
+          <div class="ann-card">
+            <div class="ann-card-header">
+              <div class="ann-icon"><i class="bi bi-person-check"></i></div>
+              <h4>Club Registration</h4>
+            </div>
+            <div class="ann-card-body">
+              <p>RBs, requesting everyone to complete club registration (if not done yet) by submitting your essential details:</p>
+              <ul class="ann-list">
+                <li>Full name</li>
+                <li>Contact information</li>
+                <li>Emergency contact</li>
+                <li>Any relevant medical information</li>
+              </ul>
+              <p>This information is crucial for ensuring everyone's safety and coordination during rides.</p>
+
+              <div class="ann-note">
+                <i class="bi bi-info-circle"></i>
+                <strong>Registration is mandatory</strong> to participate in any event organised by the community. Opting for a welcome kit is not mandatory while registering.
+              </div>
+
+              <hr class="ann-divider" />
+
+              <p><strong>Ride Safety Rules</strong> — All riders must wear full riding gear to participate in any Road Burners™ ride:</p>
+              <div class="gear-list">
+                <ul class="ann-list mb-0">
+                  <li><strong>Full Face Helmet</strong> — ISI / ECE / DOT certified</li>
+                  <li><strong>Armoured Riding Jacket</strong></li>
+                  <li><strong>Riding Gloves</strong></li>
+                  <li><strong>Riding Pants</strong> or jeans with knee protection</li>
+                  <li><strong>Protective Boots</strong></li>
+                </ul>
+              </div>
+              <p>For your <strong>first ride only</strong> (day ride or breakfast ride), if you don't yet have full gear, you may still join — but helmet, jacket, gloves &amp; boots are a must.</p>
+              <p>If a member is found violating gear rules, they may be sent back from the ride immediately.</p>
+              <p style="margin-bottom:0"><em>No rider is left behind, and no compromise on safety. 🔥</em></p>
+            </div>
+            <div class="ann-cta">
+              <span>Your prompt cooperation is greatly appreciated.</span>
+              <a href="https://forms.gle/9Ax3tHNR61hbduQZ9" class="btn-gold" target="_blank" style="font-size:0.88rem;padding:0.55rem 1.4rem">
+                <i class="bi bi-box-arrow-up-right me-1"></i>Complete Registration
+              </a>
+            </div>
+          </div>
+
+          <!-- ── 2. T-Shirt Distribution ──────────── -->
+          <div class="ann-card">
+            <div class="ann-card-header">
+              <div class="ann-icon"><i class="bi bi-bag-heart"></i></div>
+              <h4>Club T-Shirt Distribution</h4>
+            </div>
+            <div class="ann-card-body">
+              <p>Club T-shirts will be distributed <strong>only during rides, meetups, or official RB events</strong> where members are physically present.</p>
+              <p>We will not be arranging separate delivery, courier, or individual handover requests, as coordinating that for everyone becomes difficult and time-consuming.</p>
+              <p>If you haven't collected yours yet, please do so at the next ride or gathering. We'll keep announcing upcoming events regularly.</p>
+              <div class="ann-note">
+                <i class="bi bi-exclamation-triangle"></i>
+                If you're attending an upcoming ride or meetup and would like to collect your T-shirt, <strong>please inform us in advance</strong> so we can bring it along.
+              </div>
+              <p style="margin-bottom:0">Appreciate everyone's cooperation and understanding. 👍</p>
+            </div>
+          </div>
+
+          <!-- ── 3. AMC & Ride Fees ───────────────── -->
+          <div class="ann-card">
+            <div class="ann-card-header">
+              <div class="ann-icon"><i class="bi bi-credit-card"></i></div>
+              <h4>AMC &amp; Ride Administrative Charges</h4>
+            </div>
+            <div class="ann-card-body">
+
+              <!-- AMC -->
+              <p><strong>Annual Membership Contribution (AMC)</strong></p>
+              <p>The AMC supports the club's operational and infrastructure expenses required to keep Road Burners running in a structured and sustainable manner.</p>
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem">
+                <span style="font-family:'Raleway',sans-serif;font-size:2rem;font-weight:800;color:var(--dark)">₹1,200</span>
+                <span style="font-size:0.85rem;color:var(--muted)">per year</span>
+              </div>
+
+              <!-- AMC Timeline -->
+              <p><strong>AMC Timeline</strong></p>
+              <div class="mb-4">
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <p><strong>Start Date:</strong> 1 April 2026</p>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <p><strong>Payment Due:</strong> 30 April 2026 — members have one month to complete payment.</p>
+                </div>
+              </div>
+
+              <hr class="ann-divider" />
+
+              <!-- Ride charges -->
+              <p><strong>Ride Administrative Charges</strong> <span style="font-size:0.85rem;color:var(--muted)">(separate from AMC)</span></p>
+              <table class="fee-table">
+                <thead>
+                  <tr>
+                    <th>Ride Type</th>
+                    <th>Members</th>
+                    <th>Non-Members</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Breakfast Ride</td>
+                    <td>₹50</td>
+                    <td>₹200</td>
+                  </tr>
+                  <tr>
+                    <td>Overnight Ride</td>
+                    <td>₹200</td>
+                    <td>₹500</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <hr class="ann-divider" />
+
+              <!-- Payment -->
+              <p><strong>Payment</strong></p>
+              <div class="upi-badge mb-3">
+                <i class="bi bi-phone"></i>
+                sm650@axisbank
+              </div>
+              <p>Membership represents commitment to the club's growth and enables structured operations for rides, events, and recognition.</p>
+              <p style="margin-bottom:0">Feel free to reach out to the RB crew in case of any doubts.</p>
+            </div>
+            <div class="ann-cta">
+              <span>Registration is mandatory. Pay AMC via the membership form.</span>
+              <a href="https://forms.gle/vJQiUrpBkgxSrMoq6" class="btn-gold" target="_blank" style="font-size:0.88rem;padding:0.55rem 1.4rem">
+                <i class="bi bi-box-arrow-up-right me-1"></i>Membership Form
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5 col-md-12">
+          <img class="footer-logo" src="img/logo.png" alt="Road Burners" />
+          <p>A community of Super Meteor 650 riders from Bengaluru.</p>
+        </div>
+        <div class="col-lg-3 col-6">
+          <p class="footer-col-title">Pages</p>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="announcements.html">Announcements</a></li>
+            <li><a href="index.html#rides-calendar">Calendar</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="quick_ref.html">Reference</a></li>
+            <li><a href="discipline.html">Discipline</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-6">
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links">
+            <li><a href="https://www.facebook.com/groups/1364116901154720" target="_blank">Facebook</a></li>
+            <li><a href="https://chat.whatsapp.com/HVpiucMISc7EldoXT0Cm11" target="_blank">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/super_meteor_650_road_burners_/" target="_blank">Instagram</a></li>
+            <li><a href="mailto:contact@sm650.com">contact@sm650.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 <strong style="color:var(--gold)">#SM650RB</strong> Road Burners. All rights reserved.</span>
+        <a href="mailto:contact@sm650.com">contact@sm650.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/shared.js"></script>
+</body>
+</html>

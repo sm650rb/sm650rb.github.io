@@ -1,96 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>SM650 - Road Burners Community Bengaluru - Gallery</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
+<head>
+  <meta charset="utf-8" />
+  <title>Gallery | Road Burners SM650 Bengaluru</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Photos and ride recaps from Road Burners SM650 community events in Bengaluru." />
 
-    <!-- Favicons -->
-    <link href="img/favicon.png" rel="icon" />
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <link href="img/favicon.png" rel="icon" />
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="css/shared.css" rel="stylesheet" />
 
-    <!-- Bootstrap CSS File -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background: var(--bg-light); }
 
-    <!-- Libraries CSS Files -->
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/venobox/venobox.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    /* Events grid */
+    #events-section { padding: 60px 0 80px; }
 
-    <!-- Main Stylesheet File -->
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/expand.css" rel="stylesheet" />
-    <link href="css/slides.css" rel="stylesheet" />
-  </head>
+    .event-card-link { text-decoration: none; }
 
-  <body>
-    <!--==========================
-    Header
-  ============================-->
-    <header id="header">
-      <div class="container">
-        <div id="logo" class="pull-left">
-          <a href="http://www.sm650.com/#intro" class="scrollto"
-            ><img src="img/logo.png" alt="" title=""
-          /></a>
-        </div>
-        <!-- #nav-menu-container -->
+    .event-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.055);
+      transition: transform 0.25s, box-shadow 0.25s;
+      height: 100%;
+    }
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    }
+    .event-card-img {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #e9ecef;
+    }
+    .event-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .event-card:hover .event-card-img img {
+      transform: scale(1.04);
+    }
+    .event-card-body {
+      padding: 1.1rem 1.25rem 1.25rem;
+    }
+    .event-card-body h5 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 0.3rem;
+    }
+    .event-card-body p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    #loading-msg {
+      color: var(--gold);
+      font-size: 0.95rem;
+    }
+    #error-msg {
+      color: #dc3545;
+      font-size: 0.9rem;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Road Burners SM650" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="announcements.html">Announcements</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#rides-calendar">Calendar</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="quick_ref.html">Reference</a></li>
+          <li class="nav-item"><a class="nav-link nav-discipline" href="discipline.html">Discipline</a></li>
+          <li class="nav-item ms-lg-2"><a class="nav-link nav-join" href="index.html#join-us">Join Us</a></li>
+        </ul>
       </div>
-    </header>
-    <!-- #header -->
+    </div>
+  </nav>
 
-    <section id="events">
-      <div class="events-container">
-        <div class="container">
-          <div id="spacer">&nbsp;</div>
-          <div class="section-header">
-            <h2>Our Events</h2>
-            <p>Here are some of our events</p>
-            <p id="loading" style="color: #ffbd72">Loading...</p>
-          </div>
-          <div class="row" id="events-grid"></div>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <span class="sec-label">Memories on the road</span>
+      <h1>Gallery</h1>
+      <p>Rides, events and moments from the Road Burners community.</p>
+    </div>
+  </div>
+
+  <!-- EVENTS GRID -->
+  <section id="events-section">
+    <div class="container">
+      <p id="loading-msg"><i class="bi bi-hourglass-split me-1"></i>Loading events…</p>
+      <p id="error-msg"><i class="bi bi-exclamation-circle me-1"></i>Could not load events. Please try again later.</p>
+      <div class="row g-4" id="events-grid"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5 col-md-12">
+          <img class="footer-logo" src="img/logo.png" alt="Road Burners" />
+          <p>A community of Super Meteor 650 riders from Bengaluru.</p>
+        </div>
+        <div class="col-lg-3 col-6">
+          <p class="footer-col-title">Pages</p>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#rides-calendar">Calendar</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="quick_ref.html">Reference</a></li>
+            <li><a href="discipline.html">Discipline</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-6">
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links">
+            <li><a href="https://www.facebook.com/groups/1364116901154720" target="_blank">Facebook</a></li>
+            <li><a href="https://chat.whatsapp.com/HVpiucMISc7EldoXT0Cm11" target="_blank">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/super_meteor_650_road_burners_/" target="_blank">Instagram</a></li>
+            <li><a href="mailto:contact@sm650.com">contact@sm650.com</a></li>
+          </ul>
         </div>
       </div>
-    </section>
-
-    <!--==========================
-    Footer
-  ============================-->
-    <footer id="footer" style="z-index: 3">
-      <div class="container">
-        <div class="copyright" style="font-size: 0.9em">
-          &copy; Copyright <strong style="color: #ffdf72">#SM650RB</strong>. All
-          Rights Reserved,
-          <a href="mailto:contact@sm650.com">contact@sm650.com</a>
-        </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 <strong style="color:var(--gold)">#SM650RB</strong> Road Burners. All rights reserved.</span>
+        <a href="mailto:contact@sm650.com">contact@sm650.com</a>
       </div>
-    </footer>
-    <!-- #footer -->
+    </div>
+  </footer>
 
-    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+  <a href="#" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- JavaScript Libraries -->
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/superfish/hoverIntent.js"></script>
-    <script src="lib/superfish/superfish.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/venobox/venobox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <script src="js/events_grid.js"></script>
-    <script src="js/expand.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/events_grid.js"></script>
+</body>
 </html>
