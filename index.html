@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Road Burners | SM650 Community Bengaluru</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Road Burners is a Super Meteor 650 riders community based in Bengaluru. Join us for rides, events, and camaraderie." />
+  <meta name="keywords" content="Super Meteor 650, Road Burners, Bengaluru, Royal Enfield, SM650, riders club" />
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon" />
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Shared styles -->
+  <link href="css/shared.css?v=2" rel="stylesheet" />
+
+  <style>
+    /* ── HERO ───────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      padding-top: 70px;
+      overflow: hidden;
+    }
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.1rem;
+    }
+    .hero-title {
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 800;
+      line-height: 1.0;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title span { color: var(--gold); }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 400px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-col { padding: 3rem 0; }
+
+    /* Bike crossfade slideshow */
+    .bike-slideshow {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+    }
+    .bike-slideshow img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      animation: bikeFade 14s infinite;
+    }
+    .bike-slideshow img:nth-child(1) { animation-delay:  0s; }
+    .bike-slideshow img:nth-child(2) { animation-delay:  2s; }
+    .bike-slideshow img:nth-child(3) { animation-delay:  4s; }
+    .bike-slideshow img:nth-child(4) { animation-delay:  6s; }
+    .bike-slideshow img:nth-child(5) { animation-delay:  8s; }
+    .bike-slideshow img:nth-child(6) { animation-delay: 10s; }
+    .bike-slideshow img:nth-child(7) { animation-delay: 12s; }
+    @keyframes bikeFade {
+      0%   { opacity: 0; }
+      5%   { opacity: 1; }
+      20%  { opacity: 1; }
+      25%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    /* ── ABOUT ──────────────────────────────────── */
+    #about {
+      padding: 100px 0;
+      background: var(--bg-light);
+    }
+    .about-body {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .stat-card {
+      border-left: 3px solid var(--gold);
+      padding: 0.5rem 0 0.5rem 1.25rem;
+    }
+    .stat-num {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.1;
+    }
+    .stat-lbl {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ── RIDES CALENDAR ─────────────────────────── */
+    #rides-calendar {
+      padding: 100px 0;
+      background: #fff;
+    }
+    .cal-card {
+      background: var(--dark);
+      border-radius: 20px;
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      color: #fff;
+    }
+    .cal-card .sec-label { color: var(--gold); }
+    .cal-card h3 {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+    .cal-card p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ── JOIN US ────────────────────────────────── */
+    #join-us {
+      padding: 100px 0;
+      background: var(--bg-light);
+    }
+    .join-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2.25rem 1.75rem;
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.055);
+      transition: transform 0.25s, box-shadow 0.25s;
+      height: 100%;
+    }
+    .join-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.09);
+    }
+    .join-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      margin: 0 auto 1.4rem;
+    }
+    .join-card h5 {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+    }
+    .join-card .join-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.65;
+    }
+    .btn-social {
+      display: inline-block;
+      border: none;
+      border-radius: 50px;
+      padding: 0.55rem 1.5rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-social:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-fb   { background: #1877f2; color: #fff !important; }
+    .btn-wa   { background: #25d366; color: #fff !important; }
+    .btn-ig   { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff !important; }
+
+    /* ── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 991px) {
+      #hero { text-align: center; }
+      .hero-sub { max-width: 100%; }
+      .hero-col { padding: 2rem 0 1rem; }
+      .bike-slideshow { margin-top: 1.5rem; }
+      .hero-btns { justify-content: center; }
+    }
+    @media (max-width: 767px) {
+      #about, #rides-calendar, #join-us { padding: 72px 0; }
+    }
+  </style>
+</head>
+
+<body data-nav-page="index">
+
+  <!-- ── NAVBAR ────────────────────────────────────── -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#hero">
+        <img src="img/logo.png" alt="Road Burners SM650" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#rides-calendar">Calendar</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navMore" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navMore">
+              <li><a class="dropdown-item" href="announcements.html">Announcements</a></li>
+              <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+              <li><a class="dropdown-item" href="quick_ref.html">Reference</a></li>
+              <li><a class="dropdown-item" href="manual.html">Owner's Manual</a></li>
+              <li><a class="dropdown-item nav-discipline" href="discipline.html">Discipline</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ms-lg-2"><a class="nav-link nav-join" href="#join-us">Join Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────── -->
+  <section id="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6 hero-col">
+          <p class="hero-eyebrow">Super Meteor 650 · Bengaluru</p>
+          <h1 class="hero-title">Road<br /><span>Burners</span><br />Community</h1>
+          <p class="hero-sub">A brotherhood of SM650 riders from Bengaluru. We ride together, grow together, and keep each other safe on every road.</p>
+          <div class="d-flex flex-wrap gap-3 hero-btns">
+            <a href="#about" class="btn-gold">About Us</a>
+            <a href="#join-us" class="btn-outline-dk">Join the Club</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="bike-slideshow">
+            <img src="img/models/1_astral_black.png"      alt="SM650 Astral Black" />
+            <img src="img/models/2_astral_blue.png"       alt="SM650 Astral Blue" />
+            <img src="img/models/3_astral_green.png"      alt="SM650 Astral Green" />
+            <img src="img/models/4_interstellar_green.png" alt="SM650 Interstellar Green" />
+            <img src="img/models/5_interstellar_grey.png"  alt="SM650 Interstellar Grey" />
+            <img src="img/models/6_celestial_red.png"     alt="SM650 Celestial Red" />
+            <img src="img/models/7_celestial_blue.png"    alt="SM650 Celestial Blue" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!-- ── ABOUT ────────────────────────────────────── -->
+    <section id="about">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <p class="sec-label">Who we are</p>
+            <h2 class="sec-title">More than just riders.<br />We're family.</h2>
+            <p class="about-body">Everything — your happiness, your achievements — means so much more when you're part of an extended family you call your ride group. Road Burners is an exclusive community for Super Meteor 650 owners based in Bengaluru.</p>
+            <p class="about-body">We plan rides, talk accessories and gear, help each other with bike issues, and just enjoy the road together.</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="row g-4">
+              <div class="col-6">
+                <div class="stat-card">
+                  <div class="stat-num">SM650</div>
+                  <div class="stat-lbl">Royal Enfield Super Meteor 650</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="stat-card">
+                  <div class="stat-num">BLR</div>
+                  <div class="stat-lbl">Based in Bengaluru, Karnataka</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="stat-card">
+                  <div class="stat-num" style="font-size:1.1rem;line-height:1.6">Rides · Gear · Community</div>
+                  <div class="stat-lbl">What we're all about</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RIDES CALENDAR ────────────────────────────── -->
+    <section id="rides-calendar">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-7 col-md-9">
+            <div class="cal-card">
+              <p class="sec-label">What's coming up</p>
+              <h3>Rides Calendar</h3>
+              <p>Check out our upcoming planned rides. New routes added regularly — don't miss out.</p>
+              <a href="img/rides_calendar.png" target="_blank" class="btn-gold">
+                <i class="bi bi-calendar3 me-2"></i>View Calendar
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── JOIN US ────────────────────────────────────── -->
+    <section id="join-us">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="sec-label">Get involved</p>
+          <h2 class="sec-title">Join the Community</h2>
+          <p class="text-muted" style="max-width:460px;margin:0 auto;font-size:0.97rem">Find us where you're most comfortable. We're active across all platforms — exclusive for Bengaluru SM650 owners.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Facebook -->
+          <div class="col-lg-4 col-md-6">
+            <div class="join-card">
+              <div class="join-icon" style="background:#e7f0fd">
+                <i class="bi bi-facebook" style="color:#1877f2"></i>
+              </div>
+              <h5>Facebook Group</h5>
+              <p class="join-desc">Ride announcements, trip photos, discussions and more.</p>
+              <a href="https://www.facebook.com/groups/1364116901154720" class="btn-social btn-fb" target="_blank">Join on Facebook</a>
+            </div>
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="col-lg-4 col-md-6">
+            <div class="join-card">
+              <div class="join-icon" style="background:#e7f9ee">
+                <i class="bi bi-whatsapp" style="color:#25d366"></i>
+              </div>
+              <h5>WhatsApp Community</h5>
+              <p class="join-desc">Our most active space. Real-time updates, ride co-ordination and banter.</p>
+              <div class="d-flex flex-column align-items-center gap-2">
+                <button class="btn-social btn-wa" data-bs-toggle="modal" data-bs-target="#whatsappModal">Show QR Code</button>
+                <a href="https://chat.whatsapp.com/HVpiucMISc7EldoXT0Cm11" target="_blank" style="font-size:0.82rem;color:var(--muted)">or tap to join directly →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Instagram -->
+          <div class="col-lg-4 col-md-6">
+            <div class="join-card">
+              <div class="join-icon" style="background:#fce8f3">
+                <i class="bi bi-instagram" style="color:#c13584"></i>
+              </div>
+              <h5>Instagram</h5>
+              <p class="join-desc">Reels, ride photography and behind-the-scenes moments.</p>
+              <a href="https://www.instagram.com/super_meteor_650_road_burners_/" class="btn-social btn-ig" target="_blank">Follow on Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────── -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5 col-md-12">
+          <img class="footer-logo" src="img/logo.png" alt="Road Burners" />
+          <p>A community of Super Meteor 650 riders from Bengaluru. We discuss rides, accessories, gear, motorcycle issues, and so much more. Exclusive for Bengaluru SM650 owners.</p>
+        </div>
+        <div class="col-lg-3 col-6">
+          <p class="footer-col-title">Pages</p>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="announcements.html">Announcements</a></li>
+            <li><a href="#rides-calendar">Calendar</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="quick_ref.html">Reference</a></li>
+            <li><a href="discipline.html">Discipline</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-6">
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links">
+            <li><a href="https://www.facebook.com/groups/1364116901154720" target="_blank">Facebook</a></li>
+            <li><a href="https://chat.whatsapp.com/HVpiucMISc7EldoXT0Cm11" target="_blank">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/super_meteor_650_road_burners_/" target="_blank">Instagram</a></li>
+            <li><a href="mailto:contact@sm650.com">contact@sm650.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 <strong style="color:var(--gold)">#SM650RB</strong> Road Burners. All rights reserved.</span>
+        <a href="mailto:contact@sm650.com">contact@sm650.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── WHATSAPP MODAL ─────────────────────────────── -->
+  <div class="modal fade" id="whatsappModal" tabindex="-1" aria-labelledby="whatsappModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="whatsappModalLabel">Join Us on WhatsApp</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center py-4">
+          <img src="img/whatsapp-qr-link.png" alt="WhatsApp QR Code" class="img-fluid" style="max-width:240px" />
+          <p class="mt-3 mb-0 text-muted" style="font-size:0.92rem">
+            Scan to join our WhatsApp community.<br />
+            <strong>Exclusive for Bengaluru SM650 owners.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BACK TO TOP ────────────────────────────────── -->
+  <a href="#hero" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/shared.js?v=2"></script>
+
+</body>
+</html>

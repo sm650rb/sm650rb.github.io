@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Event | Road Burners SM650 Bengaluru</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Event photos and details from the Road Burners SM650 community." />
+
+  <link href="img/favicon.png" rel="icon" />
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="css/shared.css?v=2" rel="stylesheet" />
+
+  <style>
+    body { background: var(--bg-light); }
+
+    #event-section { padding: 60px 0 80px; }
+
+    .event-meta {
+      margin-bottom: 2.5rem;
+    }
+    .event-meta h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+    .event-meta .event-date {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .event-meta .event-date i { color: var(--gold); margin-right: 0.4rem; }
+
+    /* Loading / error */
+    #loading-msg { color: var(--gold); font-size: 0.95rem; }
+    #error-msg   { color: #dc3545; font-size: 0.9rem; display: none; }
+
+    /* Photo grid */
+    .gallery-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .gallery-thumb:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Modal photo */
+    #modalPhoto {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .modal-content { background: #000; border-radius: 12px; }
+    .modal-header  {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 0.75rem 1rem;
+    }
+    .btn-close-white {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--dark); }
+  </style>
+</head>
+
+<body data-nav-page="gallery">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Road Burners SM650" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#rides-calendar">Calendar</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="navMore" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navMore">
+              <li><a class="dropdown-item" href="announcements.html">Announcements</a></li>
+              <li><a class="dropdown-item active" href="gallery.html">Gallery</a></li>
+              <li><a class="dropdown-item" href="quick_ref.html">Reference</a></li>
+              <li><a class="dropdown-item" href="manual.html">Owner's Manual</a></li>
+              <li><a class="dropdown-item nav-discipline" href="discipline.html">Discipline</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ms-lg-2"><a class="nav-link nav-join" href="index.html#join-us">Join Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- DARK HEADER STRIP -->
+  <div style="background:var(--dark);height:70px;margin-top:0"></div>
+
+  <!-- EVENT CONTENT -->
+  <section id="event-section">
+    <div class="container">
+
+      <a href="gallery.html" class="back-link">
+        <i class="bi bi-arrow-left"></i> Back to Gallery
+      </a>
+
+      <p id="loading-msg"><i class="bi bi-hourglass-split me-1"></i>Loading event…</p>
+      <p id="error-msg"><i class="bi bi-exclamation-circle me-1"></i>Could not load event. Please try again later.</p>
+
+      <div class="event-meta">
+        <span class="sec-label">Event</span>
+        <h1 id="event-title"></h1>
+        <p class="event-date"><i class="bi bi-calendar3"></i><span id="event-date"></span></p>
+      </div>
+
+      <div id="event-desc" class="mb-4" style="color:var(--muted);font-size:0.97rem;line-height:1.75"></div>
+
+      <div class="row g-3" id="event-gallery"></div>
+
+    </div>
+  </section>
+
+  <!-- PHOTO MODAL -->
+  <div class="modal fade" id="photoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-1 pb-3 px-3">
+          <img id="modalPhoto" src="" alt="Event photo" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5 col-md-12">
+          <img class="footer-logo" src="img/logo.png" alt="Road Burners" />
+          <p>A community of Super Meteor 650 riders from Bengaluru.</p>
+        </div>
+        <div class="col-lg-3 col-6">
+          <p class="footer-col-title">Pages</p>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#rides-calendar">Calendar</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="quick_ref.html">Reference</a></li>
+            <li><a href="discipline.html">Discipline</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-6">
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links">
+            <li><a href="https://www.facebook.com/groups/1364116901154720" target="_blank">Facebook</a></li>
+            <li><a href="https://chat.whatsapp.com/HVpiucMISc7EldoXT0Cm11" target="_blank">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/super_meteor_650_road_burners_/" target="_blank">Instagram</a></li>
+            <li><a href="mailto:contact@sm650.com">contact@sm650.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 <strong style="color:var(--gold)">#SM650RB</strong> Road Burners. All rights reserved.</span>
+        <a href="mailto:contact@sm650.com">contact@sm650.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/shared.js?v=2"></script>
+  <script src="js/events_grid.js"></script>
+</body>
+</html>

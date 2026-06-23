@@ -1,0 +1,6 @@
+# Smriti consciousness cache (managed by consciousness-cursor plugin)
+# .kb/ lives at rb_community root, not in website/
+
+.env
+.env.local
+.DS_Store
